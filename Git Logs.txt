@@ -1,0 +1,327 @@
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test
+$ touch newfile.py
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test
+$ touch newfile1.py
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test
+$ git init
+Initialized empty Git repository in C:/Users/Rohan/Desktop/Git_Test/.git/
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git config --global user.name 'Rohan Patki'
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git config  --global user.email 'patki.r@northeastern.edu'
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git config  --global user.email 'Rohanpatki1995@gmail.com'
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git add newfile.py
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$   git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   newfile.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile1.py
+
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git rm --cached newfile.py
+rm 'newfile.py'
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$   git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile.py
+        newfile1.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git add new*
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   newfile.py
+        new file:   newfile1.py
+
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git commit
+[master (root-commit) 5743fc7] Initial commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 newfile.py
+ create mode 100644 newfile1.py
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   newfile.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git add .
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git commit -m 'Changed newfile.py'
+[master b909e9f] Changed newfile.py
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$  toucn .gitignore
+bash: toucn: command not found
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$  touch .gitignore
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ ls
+newfile.py  newfile1.py
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ touch do_not_include.txt
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git add .
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ mkdir dir1
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ mkdir dir2
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ touch /dir1/newfile2.py
+touch: cannot touch '/dir1/newfile2.py': No such file or directory
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git add .
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   dir1/newfile2.txt
+
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git commit -m 'Git Tutorial'
+[master b5e7af0] Git Tutorial
+ 2 files changed, 2 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 dir1/newfile2.txt
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git branch newbranch
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git checkout  newbranch
+Switched to branch 'newbranch'
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (newbranch)
+$ touch newbranchfile.txt
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (newbranch)
+$ git add .
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (newbranch)
+$ git status
+On branch newbranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   newbranchfile.txt
+        modified:   newfile.py
+
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (newbranch)
+$ git commit -m 'Commit after Branching'
+[newbranch 262aadd] Commit after Branching
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 newbranchfile.txt
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (newbranch)
+$ git checkout master
+Switched to branch 'master'
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git checkout master
+Already on 'master'
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git merge newbranch
+Updating b5e7af0..262aadd
+Fast-forward
+ newbranchfile.txt | 0
+ newfile.py        | 3 ++-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 newbranchfile.txt
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote add origin https://github.com/Rohanpatki1995/GitTestingTutorial.gi
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote
+origin
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git push -u origin master
+remote: Repository not found.
+fatal: repository 'https://github.com/Rohanpatki1995/GitTestingTutorial.gi/' not found
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote add origin https://github.com/Rohanpatki1995/GitTestingTutorial.git
+fatal: remote origin already exists.
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote
+origin
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git push -u origin master
+remote: Repository not found.
+fatal: repository 'https://github.com/Rohanpatki1995/GitTestingTutorial.gi/' not found
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote rm
+usage: git remote remove <name>
+
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote rm .
+fatal: No such remote: '.'
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote -v
+origin  https://github.com/Rohanpatki1995/GitTestingTutorial.gi (fetch)
+origin  https://github.com/Rohanpatki1995/GitTestingTutorial.gi (push)
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ ^C
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote rm https://github.com/Rohanpatki1995/GitTestingTutorial.gi (fetch)
+bash: syntax error near unexpected token `('
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote rm https://github.com/Rohanpatki1995/GitTestingTutorial.gi
+fatal: No such remote: 'https://github.com/Rohanpatki1995/GitTestingTutorial.gi'
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote rm origin
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote add origin https://github.com/Rohanpatki1995/GitTestingTutorial.git
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git remote -v
+origin  https://github.com/Rohanpatki1995/GitTestingTutorial.git (fetch)
+origin  https://github.com/Rohanpatki1995/GitTestingTutorial.git (push)
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git push -u origin master
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (14/14), 1.30 KiB | 190.00 KiB/s, done.
+Total 14 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Rohanpatki1995/GitTestingTutorial.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ touch README.md
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git add .
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   README.md
+
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git commit -m 'Added Readme'
+[master bf45398] Added Readme
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git ppush
+git: 'ppush' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 317 bytes | 317.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Rohanpatki1995/GitTestingTutorial.git
+   262aadd..bf45398  master -> master
+
+Rohan@LAPTOP-39A6HQ8C MINGW64 ~/Desktop/Git_Test (master)
+$
